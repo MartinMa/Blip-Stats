@@ -26,8 +26,6 @@ $(document).ready(function(){
 		// This can take up to 10 seconds with a limit of 1000 blips
 		$.ajax({
 				url: 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D%22http%3A%2F%2Fapi.blip.fm%2Fblip%2FgetUserProfile.json%3Fusername%3D' + username + '%26offset%3D0%26limit%3D' + limit + '%22%20and%20itemPath%3D%22json.result.collection.Blip.insTime%22&format=json&diagnostics=false',
-				/*url: 'jsonp.html',*/
-				/*jsonpCallback: 'jsonp1270989106150',*/
 				dataType: 'jsonp',
 				success: function(data) {
 					if( !data.query.results || data.error ) {
