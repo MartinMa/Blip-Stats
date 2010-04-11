@@ -81,15 +81,12 @@ $(document).ready(function(){
 					}
 					var mean = blipCount/count;
 					
-					// URI limit is practically at 2000 symbols (bottleneck: IE6)
+					// URI limit is practically at 2000+ symbols (then Google Chart API starts to cry)
 					// construct the URI for Google Chart API
-					// TODO: keep an eye on granularity
+					// TODO: keep an eye on granularity (too many data points look bad => do some kind of interpolation)
 					var chartApiURL = "http://chart.apis.google.com/chart";
 					chartApiURL += "?cht=lc";
-					chartApiURL += "&chd=t:" + roundEx(chartdata[0]*100/(DateCountMax*1.05));
-					for(var i = 1; i < chartdata.length; i++) {
-						chartApiURL += "," + roundEx(chartdata[i]*100/(DateCountMax*1.05));
-					}
+					chartApiURL += extendedEncode(chartdata, DateCountMax*1.05);
 					chartApiURL += "&chco=0066AB";
 					chartApiURL += "&chls=2.0";
 					chartApiURL += "&chs=500x240";
@@ -130,4 +127,31 @@ $(document).ready(function(){
 function roundEx(x) {
 	// rounds to two decimal places
 	return Math.round(x*100)/100;
+}
+
+// Google Code for extended encoding.
+var EXTENDED_MAP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.';
+var EXTENDED_MAP_LENGTH = EXTENDED_MAP.length;
+function extendedEncode(arrVals, maxVal) {
+	var chartData = '&chd=e:';
+
+	for(i = 0, len = arrVals.length; i < len; i++) {
+		// In case the array vals were translated to strings.
+		var numericVal = new Number(arrVals[i]);
+		// Scale the value to maxVal.
+		var scaledVal = Math.floor(EXTENDED_MAP_LENGTH * EXTENDED_MAP_LENGTH * numericVal / maxVal);
+
+		if(scaledVal > (EXTENDED_MAP_LENGTH * EXTENDED_MAP_LENGTH) - 1) {
+			chartData += "..";
+		} else if (scaledVal < 0) {
+			chartData += '__';
+		} else {
+			// Calculate first and second digits and add them to the output.
+			var quotient = Math.floor(scaledVal / EXTENDED_MAP_LENGTH);
+			var remainder = scaledVal - EXTENDED_MAP_LENGTH * quotient;
+			chartData += EXTENDED_MAP.charAt(quotient) + EXTENDED_MAP.charAt(remainder);
+		}
+	}
+
+	return chartData;
 }
