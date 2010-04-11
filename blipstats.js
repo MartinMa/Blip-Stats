@@ -39,6 +39,11 @@ $(document).ready(function(){
 						$('#makeitso button').removeAttr('disabled');
 						return;
 					}
+					
+					// reset some variables
+					ArrayOfDates = new Array();
+					DateCountMax = 0;
+					BlipDateMax = new Date();
 
 					var blipCount = parseInt(data.query.count, 10);
 					TotalBlipCount += blipCount;
