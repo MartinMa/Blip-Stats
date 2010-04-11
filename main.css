@@ -1,0 +1,136 @@
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background: url(back.png);
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	line-height: 1.2;
+}
+
+p { margin: 0; }
+h1 { font-size: 1.8em }
+h1,h2,h3,h4 { font-family: 'ChunkFiveRegular',Rockwell,'Century Schoolbook',serif;}
+h1,h2,h3,h4,h5,h6 { margin: 0 0 0.25em; }
+h6 { color:grey; margin-top:5px; }
+
+#title {
+	background:url("smiley.gif") no-repeat scroll 0 0 transparent;
+	height:35px;
+	margin-bottom:15px;
+	padding-left:43px;
+}
+	#title h4 {
+		color:grey;
+	}
+	#title h1, h4 {
+		display:inline;
+	}
+
+a {
+	color: #355FBE;
+}
+
+input {
+	color:#666666;
+	font-size:14px;
+	margin-right:5px;
+	padding:5px;
+	width:200px;
+}
+
+button {
+	background:url(https://assets0.github.com/images/modules/buttons/bigbutton_matrix.gif) no-repeat scroll 100% 0 #DDDDDD;
+	border:medium none;
+	color:#333333;
+	cursor:pointer;
+	font-size:12px;
+	font-weight:bold;
+	height:36px;
+	margin-left:10px;
+	overflow:visible;
+	padding:0 5px 0 0;
+	text-shadow:1px 1px 0 #FFFFFF;
+	white-space:nowrap;
+}
+
+button span {
+	display:block;
+	height:36px;
+	padding:0 10px 0 15px;
+	line-height:36px;
+	background:url(https://assets0.github.com/images/modules/buttons/bigbutton_matrix.gif) 0 0 no-repeat #ddd;
+}
+button:hover {
+	color:#fff;
+	text-shadow:-1px -1px 0 rgba(0,0,0,0.3);
+	background-position:100% -80px;
+}
+button.mousedown {
+	background-position:100% -120px;
+	color:#FFFFFF;
+	text-shadow:-1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+button.mousedown span.mousedown {
+	background-position:0 -120px;
+}
+button:hover span { background-position:0 -80px; }
+button::-moz-focus-inner{ margin:-1px -3px; }
+button:disabled{ opacity:.5; }
+
+
+.form {
+	padding: 5px 0;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+a:hover
+{
+	color: #FFF;
+	background-color: #355FBE;
+}
+
+.content {
+	margin: 0 auto;
+	text-align: left;
+	width: 980px;
+	position: relative;
+	top: 0; left: 0;
+}
+
+.box {
+	background-color: #FFF;
+	margin: 50px 25px 35px 25px;
+	-moz-box-shadow: 0 0 5px #999;
+	-moz-border-radius: 4px;
+	-webkit-box-shadow: 0 0 5px #999;
+	-webkit-border-radius: 4px;
+	box-shadow: 0 0 5px #999;
+	border-radius: 4px;
+	padding: 20px 25px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0pt;
+	width: 100%;
+	background: #fff;
+	border-top: 2px solid #999;
+	padding: 10px 0 0 0;
+}
+
+.copy {
+	text-align: left;
+	padding: 5px 50px 15px 50px;
+	font-size: 12px;
+}
+
+@font-face {
+	font-family: 'ChunkFiveRegular';
+	src: url('fonts/Chunkfive.eot');
+	src: local('ChunkFive Regular'), local('ChunkFive'), url('fonts/Chunkfive.woff') format('woff'), url('fonts/Chunkfive.otf') format('opentype'), url('fonts/Chunkfive.svg#ChunkFive') format('svg');
+}
