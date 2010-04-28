@@ -83,7 +83,7 @@ $(document).ready(function(){
 					
 					// URI limit is practically at 2000+ symbols (then Google Chart API starts to cry)
 					// construct the URI for Google Chart API
-					// TODO: keep an eye on granularity (too many data points look bad => do some kind of interpolation)
+					// TODO: keep an eye on granularity (too many data points look bad => do some kind of extrapolation)
 					var chartApiURL = "http://chart.apis.google.com/chart";
 					chartApiURL += "?cht=lc";
 					chartApiURL += extendedEncode(chartdata, DateCountMax*1.05);

@@ -2,14 +2,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="DESCRIPTION" content="Blipstats" />
-<title>Blipstats @ GitHub</title>
+<meta name="DESCRIPTION" content="Blip Playlists" />
+<title>Blipstats @ GitHub (Playlists)</title>
 <link rel="icon" href="favicon.png" type="image/png" />
 <link rel="shortcut icon" href="favicon.png" type="image/png" />
 
 <link type="text/css" href="main.css" rel="stylesheet" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script src="blipstats.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<script src="playlist.js"></script>
 </head>
 <!--
                     ________               
@@ -37,24 +37,34 @@
 	</a>
 	<div class="content">
 		<div class="box">
-			<div id="title"><h1>Blip Stats</h1><h4>&nbsp;v0.1</h4></div>
-			<p>You know you are a <a href="http://Blip.fm">Blip.fm</a> crackhead, but now you can have proof in the form of a spiffy line graph. <br />
-			Please type in a Blip.fm username and hit Enter.
-			</p>
+			<div id="title"><h1>Blip.fm Playlists</h1><h4>&nbsp;</h4></div>
+			<p>To get a sorted listing of a <a href="http://Blip.fm">Blip.fm</a> Playlist, please provide a username.</p>
 			<form action="javascript:;" id="makeitso">
 				<div class="form">
 					<input type="text" id="username">
-					<button type="submit"><span>Make it so!</span></button>
+					<button type="submit"><span>Yes Please!</span></button>
 				</div>
 			</form>
-			<div id="results"></div>
-			<h6><i>Note:</i> This is an unofficial project.</h6>
+			<div id="results">
+				<!-- <div class="tweem">
+					<div class="content">
+						<div style="position: relative;">
+							<div>
+								<a href="/username">username</a>
+								<span>Message</span>
+							</div>
+							<div class="song">
+								<span>songtitle</span>
+							</div>
+							<div class="date">
+								<a href="http://blip.fm/permalink">Date</a>
+							</div>
+						</div>
+					</div>
+				</div> -->
+			</div>
+			<h6><i>Note:</i> This is an unofficial project. <a href="./index.html">return to BlipStats</a></h6>
 		</div>
-	</div>
-	<div class="footer">
-	  <div class="copy">
-		&copy; 2010 <a href="http://blip.fm/alienfresh">alienfresh</a> :P &mdash; The Blip.fm logo is a trademark of Blip Inc. in the United States.
-	  </div>
 	</div>
 </body>
 </html>

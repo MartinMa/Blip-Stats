@@ -2,7 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: center;
-	background: url(back.png);
+	background: url(back.png) repeat-x #cccccc;
 	font-family: Verdana, Helvetica, Arial, sans-serif;
 	line-height: 1.2;
 }
@@ -127,6 +127,29 @@ a:hover
 	text-align: left;
 	padding: 5px 50px 15px 50px;
 	font-size: 12px;
+}
+.tweem
+ {
+	border-bottom:1px solid #EEEEEE;
+	margin:0;overflow:hidden;
+	position:relative;
+	width:100%;
+	z-index:0;
+}
+.content {
+	padding:10px;
+	text-align:left;
+}
+
+.song {
+	margin:10px 0 0;
+}
+
+.date {
+	color:#666666;
+	font-size:85%;
+	line-height:1.44em;
+	text-transform:uppercase;
 }
 
 @font-face {
